@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pentest-900 text-gray-100 antialiased;
+  }
+}
+
+/* Light theme overrides — applied when <html class="light"> (toggled in Settings → System) */
+.light body {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+.light .bg-slate-950 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+.light .bg-slate-900,
+.light .bg-slate-900\/40,
+.light .bg-slate-900\/60 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+.light .text-slate-100,
+.light .text-slate-200,
+.light .text-white {
+  color: #0f172a !important;
+}
+.light .text-slate-400,
+.light .text-slate-500 {
+  color: #475569 !important;
+}
+.light .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+@layer components {
+  .card {
+    @apply bg-pentest-800 border border-pentest-600 rounded-lg p-6;
+  }
+  .btn-primary {
+    @apply bg-neon-green text-pentest-900 font-semibold px-4 py-2 rounded-lg hover:bg-neon-green/80 transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-pentest-600 text-gray-100 font-medium px-4 py-2 rounded-lg hover:bg-pentest-500 transition-colors;
+  }
+  .btn-danger {
+    @apply bg-neon-red text-white font-semibold px-4 py-2 rounded-lg hover:bg-neon-red/80 transition-colors;
+  }
+  .badge-critical {
+    @apply bg-red-900/50 text-red-300 border border-red-700 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-high {
+    @apply bg-orange-900/50 text-orange-300 border border-orange-700 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-medium {
+    @apply bg-yellow-900/50 text-yellow-300 border border-yellow-700 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-low {
+    @apply bg-blue-900/50 text-blue-300 border border-blue-700 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-info {
+    @apply bg-gray-800 text-gray-300 border border-gray-600 px-2 py-0.5 rounded-full text-xs;
+  }
+  .input-field {
+    @apply bg-pentest-700 border border-pentest-500 rounded-lg px-3 py-2 text-gray-100 focus:outline-none focus:border-neon-green focus:ring-1 focus:ring-neon-green/50;
+  }
+}
