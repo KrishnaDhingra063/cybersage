@@ -1,0 +1,29 @@
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.db
+*.sqlite3
+uvi.err.log
+uvi.out.log
+uvicorn.err.log
+uvicorn.out.log
+uvicorn.pid
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/vite.err.log
+
+# Environment files
+.env
+*.env
+.vscode/
+
+
+*.db-shm
+*.db-wal
+backend/*.db-shm
+backend/*.db-wal
