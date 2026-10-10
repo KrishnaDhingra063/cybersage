@@ -1,0 +1,28 @@
+FROM kalilinux/kali-rolling
+
+# Prefer IPv4: many networks resolve IPv6 (AAAA) for kali mirrors without
+# providing IPv6 egress, which makes apt fail with "Unable to connect".
+RUN echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    nmap \
+    masscan \
+    nuclei \
+    nikto \
+    sqlmap \
+    hashcat \
+    whatweb \
+    dirsearch \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    git \
+    && mkdir -p /tmp/nuclei-templates \
+    && cd /tmp && nuclei -update-templates 2>/dev/null || true
+
+WORKDIR /workspace
+
+CMD ["sleep", "infinity"]
